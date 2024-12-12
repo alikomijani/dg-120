@@ -1,0 +1,343 @@
+{
+  "categories": [
+    { "id": "1", "title": "Mobile", "label": "موبایل" },
+    { "id": "2", "title": "Laptop", "label": "لپ‌تاپ" },
+    { "id": "3", "title": "Headphones", "label": "هدفون" },
+    { "id": "4", "title": "Smartwatches", "label": "ساعت هوشمند" },
+    { "id": "5", "title": "Televisions", "label": "تلویزیون" },
+    { "id": "6", "title": "Cameras", "label": "دوربین" }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "title": "گوشی موبایل آلکاتل مدل 2057 FA دو سیم‌ کارت",
+      "enTitle": "ALCATEL 2057 FA Dual SIM Mobile Phone",
+      "rate": "3.8",
+      "price": "3100000",
+      "discount": 5,
+      "views": 100,
+      "categoryId": "1"
+    },
+    {
+      "id": "2",
+      "title": "لپ‌تاپ ایسوس مدل VivoBook X515",
+      "enTitle": "ASUS VivoBook X515 Laptop",
+      "rate": "4.2",
+      "price": "15000000",
+      "discount": 10,
+      "views": 250,
+      "categoryId": "2"
+    },
+    {
+      "id": "3",
+      "title": "هدفون بی‌سیم سامسونگ مدل Galaxy Buds 2",
+      "enTitle": "Samsung Galaxy Buds 2 Wireless Headphones",
+      "rate": "4.5",
+      "price": "4200000",
+      "discount": 15,
+      "views": 300,
+      "categoryId": "3"
+    },
+    {
+      "id": "4",
+      "title": "ساعت هوشمند شیائومی مدل Mi Band 7",
+      "enTitle": "Xiaomi Mi Band 7 Smartwatch",
+      "rate": "4.7",
+      "price": "1200000",
+      "discount": 20,
+      "views": 500,
+      "categoryId": "4"
+    },
+    {
+      "id": "5",
+      "title": "تلویزیون ال‌ جی مدل OLED C2 سایز 55 اینچ",
+      "enTitle": "LG OLED C2 55-inch TV",
+      "rate": "4.9",
+      "price": "45000000",
+      "discount": 8,
+      "views": 150,
+      "categoryId": "5"
+    },
+    {
+      "id": "6",
+      "title": "دوربین دیجیتال کانن مدل EOS 200D II",
+      "enTitle": "Canon EOS 200D II Digital Camera",
+      "rate": "4.6",
+      "price": "22000000",
+      "discount": 5,
+      "views": 180,
+      "categoryId": "6"
+    },
+    {
+      "id": "7",
+      "title": "موس گیمینگ لاجیتک مدل G502 HERO",
+      "enTitle": "Logitech G502 HERO Gaming Mouse",
+      "rate": "4.4",
+      "price": "2800000",
+      "discount": 12,
+      "views": 400,
+      "categoryId": "6"
+    },
+    {
+      "id": "8",
+      "title": "کنسول بازی سونی مدل PlayStation 5",
+      "enTitle": "Sony PlayStation 5 Console",
+      "rate": "5.0",
+      "price": "25000000",
+      "discount": 7,
+      "views": 600,
+      "categoryId": "2"
+    },
+    {
+      "id": "9",
+      "title": "کیبورد مکانیکی ریزر مدل BlackWidow V3",
+      "enTitle": "Razer BlackWidow V3 Mechanical Keyboard",
+      "rate": "4.3",
+      "price": "3500000",
+      "discount": 15,
+      "views": 230,
+      "categoryId": "6"
+    },
+    {
+      "id": "10",
+      "title": "گوشی موبایل سامسونگ مدل Galaxy S23 Ultra",
+      "enTitle": "Samsung Galaxy S23 Ultra Mobile Phone",
+      "rate": "4.8",
+      "price": "85000000",
+      "discount": 5,
+      "views": 320,
+      "categoryId": "1"
+    },
+    {
+      "id": "11",
+      "title": "لپ‌تاپ اپل مدل MacBook Air M2",
+      "enTitle": "Apple MacBook Air M2 Laptop",
+      "rate": "4.9",
+      "price": "42000000",
+      "discount": 6,
+      "views": 450,
+      "categoryId": "2"
+    },
+    {
+      "id": "12",
+      "title": "پاوربانک انکر مدل PowerCore Select 20000",
+      "enTitle": "Anker PowerCore Select 20000 Power Bank",
+      "rate": "4.7",
+      "price": "1200000",
+      "discount": 18,
+      "views": 550,
+      "categoryId": "6"
+    },
+    {
+      "id": "13",
+      "title": "هارد اکسترنال وسترن دیجیتال مدل Elements ظرفیت 2 ترابایت",
+      "enTitle": "Western Digital Elements 2TB External Hard Drive",
+      "rate": "4.6",
+      "price": "2200000",
+      "discount": 10,
+      "views": 310,
+      "categoryId": "4"
+    },
+    {
+      "id": "14",
+      "title": "ماشین لباسشویی ال جی مدل WM-G105",
+      "enTitle": "LG WM-G105 Washing Machine",
+      "rate": "4.5",
+      "price": "32000000",
+      "discount": 8,
+      "views": 170,
+      "categoryId": "3"
+    },
+    {
+      "id": "15",
+      "title": "سشوار فیلیپس مدل BHD300/10",
+      "enTitle": "Philips BHD300/10 Hair Dryer",
+      "rate": "4.2",
+      "price": "650000",
+      "discount": 20,
+      "views": 400,
+      "categoryId": "4"
+    },
+    {
+      "id": "16",
+      "title": "هدفون بی‌سیم اپل مدل AirPods Pro 2",
+      "enTitle": "Apple AirPods Pro 2 Wireless Headphones",
+      "rate": "4.8",
+      "price": "7800000",
+      "discount": 5,
+      "views": 450,
+      "categoryId": "1"
+    },
+    {
+      "id": "17",
+      "title": "مانیتور سامسونگ مدل Odyssey G5 سایز 27 اینچ",
+      "enTitle": "Samsung Odyssey G5 27-inch Monitor",
+      "rate": "4.6",
+      "price": "11500000",
+      "discount": 12,
+      "views": 250,
+      "categoryId": "3"
+    },
+    {
+      "id": "18",
+      "title": "چرخ گوشت پارس خزر مدل MG-1600P",
+      "enTitle": "Pars Khazar MG-1600P Meat Grinder",
+      "rate": "4.3",
+      "price": "2500000",
+      "discount": 10,
+      "views": 120,
+      "categoryId": "3"
+    },
+    {
+      "id": "19",
+      "title": "تبلت سامسونگ مدل Galaxy Tab S9",
+      "enTitle": "Samsung Galaxy Tab S9 Tablet",
+      "rate": "4.9",
+      "price": "32000000",
+      "discount": 7,
+      "views": 340,
+      "categoryId": "1"
+    },
+    {
+      "id": "20",
+      "title": "کولر گازی گری مدل Q2matic ظرفیت 24000",
+      "enTitle": "Gree Q2matic 24000 BTU Air Conditioner",
+      "rate": "4.5",
+      "price": "28000000",
+      "discount": 10,
+      "views": 200,
+      "categoryId": "5"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "گوشی خیلی خوبی بود",
+      "user": "میکائیل محسنی",
+      "productId": "1"
+    },
+    {
+      "id": "2",
+      "text": "کیفیت تصویر عالیه ولی قیمتش کمی بالاست.",
+      "user": "سارا نادری",
+      "productId": "5"
+    },
+    {
+      "id": "3",
+      "text": "باتری لپ‌تاپ خیلی خوب کار می‌کنه، راضی‌ام.",
+      "user": "محمد افشار",
+      "productId": "2"
+    },
+    {
+      "id": "4",
+      "text": "هدفون خیلی راحت و سبک هست، کیفیت صداش هم بی‌نظیره.",
+      "user": "آرزو محمدی",
+      "productId": "3"
+    },
+    {
+      "id": "5",
+      "text": "ساعت هوشمند امکانات خوبی داره ولی بندش یکم ضعیفه.",
+      "user": "مهدی بهرامی",
+      "productId": "4"
+    },
+    {
+      "id": "6",
+      "text": "تلویزیون فوق‌العاده‌ایه، رنگ‌ها خیلی زنده هستند.",
+      "user": "نگین حسینی",
+      "productId": "5"
+    },
+    {
+      "id": "7",
+      "text": "دوربین برای عکاسی خانوادگی خیلی خوبه ولی برای حرفه‌ای‌ها پیشنهاد نمی‌کنم.",
+      "user": "امیر شریفی",
+      "productId": "6"
+    },
+    {
+      "id": "8",
+      "text": "موس برای بازی عالیه، خیلی دقیق و راحت هست.",
+      "user": "شایان احمدی",
+      "productId": "7"
+    },
+    {
+      "id": "9",
+      "text": "کنسول بازی خیلی سریع و بدون لگ کار می‌کنه.",
+      "user": "زهرا کاظمی",
+      "productId": "8"
+    },
+    {
+      "id": "10",
+      "text": "کیبورد از نظر ظاهری زیباست و تایپ راحتی داره.",
+      "user": "علیرضا نوروزی",
+      "productId": "9"
+    },
+    {
+      "id": "11",
+      "text": "گوشی فوق‌العاده سریعی هست و دوربینش عالیه.",
+      "user": "حسن هاشمی",
+      "productId": "10"
+    },
+    {
+      "id": "12",
+      "text": "لپ‌تاپ اپل همیشه بهترین انتخابه، خیلی خوشحالم از خریدم.",
+      "user": "مهسا رضایی",
+      "productId": "11"
+    },
+    {
+      "id": "13",
+      "text": "پاوربانک خیلی سریع شارژ می‌کنه و ظرفیت بالایی داره.",
+      "user": "ندا مرادی",
+      "productId": "12"
+    },
+    {
+      "id": "14",
+      "text": "هارد دیسک برای ذخیره‌سازی داده‌ها خیلی خوب و مطمئنه.",
+      "user": "ایمان اسماعیلی",
+      "productId": "13"
+    },
+    {
+      "id": "15",
+      "text": "ماشین لباسشویی بی‌صدا و پرقدرت هست، خیلی راضی هستم.",
+      "user": "مهرداد کریمی",
+      "productId": "14"
+    },
+    {
+      "id": "16",
+      "text": "سشوار خیلی سریع موها رو خشک می‌کنه.",
+      "user": "نگار عباسی",
+      "productId": "15"
+    },
+    {
+      "id": "17",
+      "text": "هدفون اپل عالیه، صدای واضح و بی‌نقصی داره.",
+      "user": "فاطمه علیزاده",
+      "productId": "16"
+    },
+    {
+      "id": "18",
+      "text": "مانیتور خیلی باکیفیته، برای کارهای گرافیکی عالیه.",
+      "user": "امین رجبی",
+      "productId": "17"
+    },
+    {
+      "id": "19",
+      "text": "چرخ گوشت قوی هست ولی کمی سنگینه.",
+      "user": "پژمان عسگری",
+      "productId": "18"
+    },
+    {
+      "id": "20",
+      "text": "تبلت سامسونگ خیلی خوبه، برای مطالعه و فیلم دیدن مناسبه.",
+      "user": "الهام سعیدی",
+      "productId": "19"
+    },
+    {
+      "id": "21",
+      "text": "کولر گازی خیلی خوب محیط رو خنک می‌کنه و مصرف برق کمی داره.",
+      "user": "فرزاد شریفی",
+      "productId": "20"
+    }
+  ],
+  "profile": {
+    "name": "علی"
+  }
+}
