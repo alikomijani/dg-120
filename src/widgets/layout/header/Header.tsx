@@ -2,6 +2,7 @@ import Container from "../../../components/Container";
 import { Button, TextInput } from "flowbite-react";
 import { Bell, Search, ShoppingCart, UserRound } from "lucide-react";
 import { Link } from "react-router-dom";
+import CartPopover from "./CartPopover";
 
 function Header() {
   return (
@@ -27,9 +28,11 @@ function Header() {
             <UserRound />
           </Button>
           <div className="w-[1px] bg-slate-400 h-8 mx-2" />
-          <Button outline size="xs">
-            <ShoppingCart />
-          </Button>
+          <CartPopover>
+            <Button outline size="xs">
+              <ShoppingCart />
+            </Button>
+          </CartPopover>
         </div>
       </Container>
     </header>

@@ -2,10 +2,11 @@ import { useParams } from "react-router-dom";
 import { useProduct } from "../../../api/query";
 import Container from "../../../components/Container";
 import { Badge, Card } from "flowbite-react";
-
+import AddToCartButton from "../../../components/AddToCartButton";
 function ProductSingle() {
   const { productId } = useParams();
-  const { product, isProductError, isProductLoading } = useProduct(productId!);
+
+  const { product } = useProduct(productId!);
   if (!product) {
     return "در حال بار گزاری";
   }
@@ -19,7 +20,7 @@ function ProductSingle() {
           <h1 className="font-semibold text-2xl">{product.title}</h1>
           <p className="text-neutral-400">{product.enTitle}</p>
         </div>
-        <div className="p-5 pl-0 flex-shrink-0 w-[300px]">
+        <div className="p-5 pl-0 flex-shrink-0 w-[350px]">
           <Card>
             <div className="flex justify-between items-center">
               <p className="flex-grow">قیمت: </p>
@@ -34,6 +35,7 @@ function ProductSingle() {
                 ).toLocaleString()}
               </div>
             </div>
+            <AddToCartButton product={product} />
           </Card>
         </div>
       </div>
