@@ -11,7 +11,10 @@ export const CartContext = createContext<{
 });
 
 function CartProvider({ children }: PropsWithChildren) {
-  const [cart, dispatch] = useReducer(cartReducer, []);
+  const [cart, dispatch] = useReducer(cartReducer, [], () => {
+    const data = JSON.parse(localStorage.getItem("cart") ?? "[]");
+    return data;
+  });
   return (
     <CartContext.Provider
       value={{

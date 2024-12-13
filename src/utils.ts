@@ -5,3 +5,7 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+export function saveToStorage<T>(key: string, value: T): T {
+  localStorage.setItem(key, JSON.stringify(value));
+  return value;
+}

@@ -1,4 +1,5 @@
 import { CartItem, Product } from "../type";
+import { saveToStorage } from "../utils";
 
 export type CartAction = {
   type: "ADD" | "REMOVE";
@@ -11,13 +12,15 @@ export function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
       const isExist =
         state.findIndex((item) => item.product.id === payload.id) !== -1;
       if (isExist) {
-        return state.map((item) =>
-          item.product.id === payload.id
-            ? { ...item, count: item.count + 1 }
-            : item
+        return saveCartToStorage(
+          state.map((item) =>
+            item.product.id === payload.id
+              ? { ...item, count: item.count + 1 }
+              : item
+          )
         );
       } else {
-        return [...state, { product: payload, count: 1 }];
+        return saveCartToStorage([...state, { product: payload, count: 1 }]);
       }
     }
     case "REMOVE": {
@@ -28,15 +31,23 @@ export function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
       }
       const shouldRemove = item.count <= 1;
       if (shouldRemove) {
-        return state.filter((item) => item.product.id !== payload.id);
+        return saveCartToStorage(
+          state.filter((item) => item.product.id !== payload.id)
+        );
       }
-      return state.map((item) =>
-        item.product.id === payload.id
-          ? { ...item, count: item.count - 1 }
-          : item
+      return saveCartToStorage(
+        state.map((item) =>
+          item.product.id === payload.id
+            ? { ...item, count: item.count - 1 }
+            : item
+        )
       );
     }
     default:
       throw new Error("undefined action on cart");
   }
+}
+
+function saveCartToStorage(state: CartItem[]): CartItem[] {
+  return saveToStorage("cart", state);
 }
