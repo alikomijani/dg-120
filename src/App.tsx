@@ -1,25 +1,19 @@
-import Container from "./components/Container";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CategorySingle from "./pages/category/[categoryId]/Page";
+import ProductSingle from "./pages/products/[productId]/Page";
 import Layout from "./widgets/layout/Layout";
-import { getCategories } from "./api/api";
-import { useApi } from "./hooks/useApi";
-import CategoryProductList from "./widgets/CategoryProductList/CategoryProductList";
 
 export default function App() {
-  const {
-    data: categories,
-    isError: isErrorCategories,
-    isLoading: isLoadingCategories,
-  } = useApi(getCategories);
-
   return (
-    <Layout>
-      <Container size="lg">
-        <div className="flex flex-col gap-12 mt-12">
-          {categories?.map((category) => (
-            <CategoryProductList category={category} key={category.id} />
-          ))}
-        </div>
-      </Container>
-    </Layout>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="categories/:categoryId" element={<CategorySingle />} />
+          <Route path="products/:productId" element={<ProductSingle />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
