@@ -1,6 +1,7 @@
 import { createContext, PropsWithChildren, useReducer } from "react";
 import { CartAction, cartReducer } from "../reducers/cart.reducer";
 import { CartItem } from "../type";
+import { getFromStorage } from "../utils";
 
 export const CartContext = createContext<{
   cart: CartItem[];
@@ -12,8 +13,7 @@ export const CartContext = createContext<{
 
 function CartProvider({ children }: PropsWithChildren) {
   const [cart, dispatch] = useReducer(cartReducer, [], () => {
-    const data = JSON.parse(localStorage.getItem("cart") ?? "[]");
-    return data;
+    return getFromStorage<CartItem[]>("cart", []);
   });
   return (
     <CartContext.Provider

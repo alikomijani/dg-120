@@ -9,3 +9,11 @@ export function saveToStorage<T>(key: string, value: T): T {
   localStorage.setItem(key, JSON.stringify(value));
   return value;
 }
+export function getFromStorage<T>(key: string, defaultValue: T): T {
+  const storageData = localStorage.getItem(key);
+  if (storageData) {
+    return JSON.parse(storageData);
+  } else {
+    return defaultValue;
+  }
+}
