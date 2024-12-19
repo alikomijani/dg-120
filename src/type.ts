@@ -19,7 +19,7 @@ export type Comment = {
   id: string;
   text: string;
   user: string;
-  postId: string; // Should match the ID of a product
+  productId: string; // Should match the ID of a product
 };
 
 export type CartItem = {

@@ -3,6 +3,7 @@ import Container from "../../../components/Container";
 import { Badge, Card } from "flowbite-react";
 import AddToCartButton from "../../../components/AddToCartButton";
 import { useProduct } from "../../../api/query";
+import CommentsSection from "../../../widgets/CommentsSection";
 
 function ProductSingle() {
   const { productId } = useParams();
@@ -42,6 +43,7 @@ function ProductSingle() {
           </Card>
         </div>
       </div>
+      <CommentsSection />
     </Container>
   );
 }

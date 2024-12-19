@@ -1,14 +1,9 @@
-import { useApi } from "../hooks/useApi";
-import { getCategories } from "../api/api";
 import CategoryProductList from "../widgets/CategoryProductList/CategoryProductList";
 import Container from "../components/Container";
+import { useCategoriesQuery } from "../api/query";
 
 function Home() {
-  const {
-    data: categories,
-    isError: isErrorCategories,
-    isLoading: isLoadingCategories,
-  } = useApi(getCategories);
+  const { data: categories } = useCategoriesQuery();
 
   return (
     <Container size="lg">
