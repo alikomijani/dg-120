@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
 import { Minus, Plus, Trash } from "lucide-react";
 import { useContext } from "react";
-import { CartContext } from "../contexts/cart.context";
+import { CartContext } from "../providers/CartProvider";
 import { Product } from "../type";
 
 type Props = { product: Product };

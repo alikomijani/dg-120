@@ -6,10 +6,16 @@ import { useParams } from "react-router-dom";
 const CategorySingle = () => {
   const { categoryId } = useParams();
 
-  const { category, isCategoryError, isLoadingCategory } = useCategory(
-    categoryId!
-  );
-  const { products, isLoadingProducts, isErrorProducts } = useProducts({
+  const {
+    data: category,
+    isError: isCategoryError,
+    isPending: isLoadingCategory,
+  } = useCategory(categoryId!);
+  const {
+    data: products,
+    isPending: isLoadingProducts,
+    isError: isErrorProducts,
+  } = useProducts({
     categoryId: categoryId!,
   });
   const isError = isErrorProducts || isCategoryError;

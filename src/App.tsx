@@ -1,22 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import CategorySingle from "./pages/category/[categoryId]/Page";
-import ProductSingle from "./pages/products/[productId]/Page";
-import Layout from "./widgets/layout/Layout";
-import CartProvider from "./contexts/cart.context";
+import CartProvider from "./providers/CartProvider";
+import QueryProvider from "./providers/QueryProvider";
+import Routes from "./widgets/Routes";
 
 export default function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="categories/:categoryId" element={<CategorySingle />} />
-            <Route path="products/:productId" element={<ProductSingle />} />
-          </Route>
-        </Routes>
-      </Router>
-    </CartProvider>
+    <QueryProvider>
+      <CartProvider>
+        <Routes />
+      </CartProvider>
+    </QueryProvider>
   );
 }
+
+/// get =>  /api/products => Products[]
+/// get =>  /api/products/id => Product
+
+/// post => /api/products => product
+/// put => /api/products/1 => product
+/// delete => /api/products/1 =>

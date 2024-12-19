@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren, useReducer, useState } from "react";
+import { createContext, PropsWithChildren, useReducer } from "react";
 import { CartAction, cartReducer } from "../reducers/cart.reducer";
 import { CartItem } from "../type";
 import { getFromStorage } from "../utils";

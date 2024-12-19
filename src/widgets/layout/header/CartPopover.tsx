@@ -1,6 +1,6 @@
 import { Popover } from "flowbite-react";
 import { PropsWithChildren, useContext } from "react";
-import { CartContext } from "../../../contexts/cart.context";
+import { CartContext } from "../../../providers/CartProvider";
 import ProductCard from "../../../components/ProductCard";
 import AddToCartButton from "../../../components/AddToCartButton";
 

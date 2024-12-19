@@ -1,14 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useProduct } from "../../../api/query";
 import Container from "../../../components/Container";
 import { Badge, Card } from "flowbite-react";
 import AddToCartButton from "../../../components/AddToCartButton";
+import { useProduct } from "../../../api/query";
+
 function ProductSingle() {
   const { productId } = useParams();
-
-  const { product } = useProduct(productId!);
-  if (!product) {
-    return "در حال بار گزاری";
+  const { data: product, isPending, isError } = useProduct(productId!);
+  if (isError) {
+    return <h2>خطایی رخ داده است</h2>;
+  }
+  if (isPending) {
+    return <h2>...loading </h2>;
   }
   return (
     <Container>

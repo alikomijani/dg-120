@@ -7,9 +7,19 @@ type Props = {
 };
 
 function CategoryProductList({ category }: Props) {
-  const { products, isErrorProducts, isLoadingProducts } = useProducts({
+  const {
+    data: products,
+    isError,
+    isPending,
+  } = useProducts({
     categoryId: category.id,
   });
+  if (isPending) {
+    return <>loading</>;
+  }
+  if (isError) {
+    return <>error</>;
+  }
   return (
     <div className="border rounded-md p-2 shadow-md" key={category.id}>
       <h2>{category.label}</h2>
