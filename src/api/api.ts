@@ -1,4 +1,4 @@
-import { Category, Comment, Product } from "../type";
+import { Category, Comment, CreateCommentData, Product } from "../type";
 import Api from "./base";
 
 export async function getCategories() {
@@ -32,7 +32,7 @@ export async function getProductComments(params: { productId: string }) {
   return res.data;
 }
 
-export async function createComment(data: Omit<Comment, "id">) {
+export async function createComment(data: CreateCommentData) {
   const res = await Api.post<Comment>("/comments/", data);
   return res.data;
 }

@@ -1,4 +1,4 @@
-import { Comment } from "../type";
+import { Comment, CreateCommentData } from "../type";
 import {
   getProducts,
   getCategoryByID,
@@ -54,7 +54,7 @@ export function useProductCommentsQuery(
 }
 
 export function useCommentMutation(
-  options?: UseMutationOptions<Comment, Error, Omit<Comment, "id">, unknown>
+  options?: UseMutationOptions<Comment, Error, CreateCommentData, unknown>
 ) {
   const queryClient = useQueryClient();
   const { onSuccess, ...rest } = options || {};

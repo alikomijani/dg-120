@@ -17,3 +17,6 @@ export function getFromStorage<T>(key: string, defaultValue: T): T {
     return defaultValue;
   }
 }
+export function deleteFromStorage(key: string) {
+  localStorage.removeItem(key);
+}

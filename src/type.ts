@@ -21,6 +21,7 @@ export type Comment = {
   user: string;
   productId: string; // Should match the ID of a product
 };
+export type CreateCommentData = Omit<Comment, "id">;
 
 export type CartItem = {
   product: Product;
