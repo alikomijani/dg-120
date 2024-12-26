@@ -3,9 +3,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { Button, Label, TextInput } from "flowbite-react";
 import { useLoginMutation } from "../api/auth.query";
-import { useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../hooks";
+import { login } from "../features/auth/auth.slice";
 const LoginSchema = z.object({
   username: z.string({
     required_error: "نام کاربری رو بده دیگه",
@@ -21,11 +21,10 @@ interface LoginData {
 }
 function Login() {
   const navigate = useNavigate();
-
-  const { login } = useContext(AuthContext);
+  const dispatch = useAppDispatch();
   const { mutate } = useLoginMutation({
     onSuccess(data) {
-      login(data);
+      dispatch(login(data));
       navigate("/profile");
     },
     onError(error) {

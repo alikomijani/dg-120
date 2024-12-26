@@ -1,37 +1,36 @@
 import { Button } from "flowbite-react";
 import { Minus, Plus, Trash } from "lucide-react";
-import { useContext } from "react";
-import { CartContext } from "../providers/CartProvider";
 import { Product } from "../type";
+import {
+  addToCart,
+  removeFromCart,
+  getProductInCart,
+} from "../features/cart/cart.slice";
+import { useAppSelector, useAppDispatch } from "../hooks";
 
 type Props = { product: Product };
 
 function AddToCartButton({ product }: Props) {
-  const { cart, dispatch } = useContext(CartContext);
-  const productCartIndex = cart.findIndex(
-    (item) => item.product.id === product.id
+  const cartItem = useAppSelector((state) =>
+    getProductInCart(state, product.id)
   );
+  const dispatch = useAppDispatch();
   return (
     <div>
-      {productCartIndex !== -1 ? (
+      {cartItem ? (
         <Button.Group dir="ltr">
           <Button
             size="sm"
             color="gray"
-            onClick={() => dispatch({ type: "REMOVE", payload: product })}
+            onClick={() => dispatch(removeFromCart(product))}
           >
-            {cart[productCartIndex].count > 1 ? <Minus /> : <Trash />}
+            {cartItem.count > 1 ? <Minus /> : <Trash />}
           </Button>
           <Button size="sm" color="gray">
-            {cart[productCartIndex].count}
+            {cartItem.count}
           </Button>
           <Button
-            onClick={() =>
-              dispatch({
-                type: "ADD",
-                payload: product,
-              })
-            }
+            onClick={() => dispatch(addToCart(product))}
             size="sm"
             color="gray"
           >
@@ -39,14 +38,7 @@ function AddToCartButton({ product }: Props) {
           </Button>
         </Button.Group>
       ) : (
-        <Button
-          onClick={() =>
-            dispatch({
-              type: "ADD",
-              payload: product,
-            })
-          }
-        >
+        <Button onClick={() => dispatch(addToCart(product))}>
           افزودن به سبد خرید
         </Button>
       )}

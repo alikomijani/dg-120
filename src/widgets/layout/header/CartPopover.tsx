@@ -1,11 +1,11 @@
 import { Popover } from "flowbite-react";
-import { PropsWithChildren, useContext } from "react";
-import { CartContext } from "../../../providers/CartProvider";
+import { PropsWithChildren } from "react";
 import ProductCard from "../../../components/ProductCard";
 import AddToCartButton from "../../../components/AddToCartButton";
-
+import { useAppSelector } from "../../../hooks";
+import { getCart } from "../../../features/cart/cart.slice";
 function CartPopover({ children }: PropsWithChildren) {
-  const { cart } = useContext(CartContext);
+  const cart = useAppSelector(getCart);
   return (
     <Popover
       aria-labelledby="default-popover"

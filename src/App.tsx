@@ -1,16 +1,13 @@
-import { AuthProvider } from "./providers/AuthProvider";
-import CartProvider from "./providers/CartProvider";
 import QueryProvider from "./providers/QueryProvider";
 import Routes from "./widgets/routes";
-
+import { Provider } from "react-redux";
+import store from "./store";
 export default function App() {
   return (
-    <AuthProvider>
+    <Provider store={store}>
       <QueryProvider>
-        <CartProvider>
-          <Routes />
-        </CartProvider>
+        <Routes />
       </QueryProvider>
-    </AuthProvider>
+    </Provider>
   );
 }
