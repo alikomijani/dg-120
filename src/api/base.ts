@@ -1,17 +1,13 @@
 import axios from "axios";
-import { getFromStorage, deleteFromStorage, saveToStorage } from "../utils";
-import { LoginResponse } from "./auth";
-
+import store from "../store";
+import { logout, refreshToken } from "../features/auth/auth.slice";
 const Api = axios.create({
   baseURL: "http://localhost:3000/",
 });
 
 Api.interceptors.request.use(
   function (config) {
-    const auth = getFromStorage<Partial<LoginResponse>>("auth", {
-      user: undefined,
-      tokens: undefined,
-    });
+    const auth = store.getState().auth;
     if (auth.tokens) {
       config.headers.Authorization = `Bearer ${auth.tokens.accessToken}`;
     }
@@ -30,17 +26,13 @@ Api.interceptors.response.use(
     return response;
   },
   async function (error) {
-    const auth = getFromStorage<Partial<LoginResponse>>("auth", {
-      user: undefined,
-      tokens: undefined,
-    });
+    const auth = store.getState().auth;
     const originalRequest = error.config;
     if (auth.tokens && error.response.status === 401) {
       if (!originalRequest._retry) {
         originalRequest._retry = true;
       } else {
-        deleteFromStorage("auth");
-        window.location.href = "/login";
+        store.dispatch(logout());
       }
       try {
         const res = await Api.post("/auth/refresh", {
@@ -51,14 +43,10 @@ Api.interceptors.response.use(
           "Authorization"
         ] = `Bearer ${res.data.accessToken}`;
 
-        saveToStorage("auth", {
-          ...auth,
-          tokens: { ...auth.tokens, accessToken: res.data.accessToken },
-        });
+        store.dispatch(refreshToken(res.data.accessToken));
         return Api(originalRequest);
       } catch {
-        deleteFromStorage("auth");
-        window.location.href = "/login";
+        store.dispatch(logout());
       }
     }
 

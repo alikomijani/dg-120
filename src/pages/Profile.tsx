@@ -4,7 +4,7 @@ type Props = {};
 
 function Profile({}: Props) {
   const { data } = useProfileQuery();
-  return <div>{data?.username}</div>;
+  return <div>{data?.email}</div>;
 }
 
 export default Profile;

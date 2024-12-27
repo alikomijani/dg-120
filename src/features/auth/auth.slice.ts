@@ -18,10 +18,19 @@ const authSlice = createSlice({
   initialState: initialValue,
   reducers: {
     login: (state, action: PayloadAction<LoginResponse>) => {
-      state = { ...action.payload, isLogin: true };
+      const { user, tokens } = action.payload;
+      state.isLogin = true;
+      state.user.email = user.email;
+      state.user.id = user.id;
+      state.tokens.accessToken = tokens.accessToken;
+      state.tokens.refreshToken = tokens.refreshToken;
     },
     logout: (state) => {
-      state = initialValue;
+      state.isLogin = false;
+      state.user.email = "";
+      state.user.id = "";
+      state.tokens.accessToken = "";
+      state.tokens.refreshToken = "";
     },
     refreshToken: (state, action: PayloadAction<string>) => {
       state.tokens.accessToken = action.payload;

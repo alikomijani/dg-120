@@ -1,6 +1,6 @@
 import Container from "../../../components/Container";
 import { Button, TextInput } from "flowbite-react";
-import { Bell, Search, ShoppingCart, UserRound } from "lucide-react";
+import { Bell, Search, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import CartPopover from "./CartPopover";
 import ProfileButton from "./ProfileButton";

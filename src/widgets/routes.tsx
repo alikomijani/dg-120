@@ -9,6 +9,7 @@ import CategorySingle from "../pages/category/[categoryId]/Page";
 import ProductSingle from "../pages/products/[productId]/Page";
 import Login from "../pages/Login";
 import Profile from "../pages/Profile";
+import ProfileLayout from "./ProfileLayout/ProfileLayout";
 type Props = {};
 
 function Routes({}: Props) {
@@ -19,12 +20,12 @@ function Routes({}: Props) {
           <Route index element={<Home />} />
           <Route path="categories/:categoryId" element={<CategorySingle />} />
           <Route path="products/:productId" element={<ProductSingle />} />
+          <Route path="/profile" element={<ProfileLayout />}>
+            <Route index element={<Profile />} />
+          </Route>
         </Route>
         <Route path="/auth">
           <Route path="login" element={<Login />} />
-        </Route>
-        <Route path="/profile">
-          <Route index element={<Profile />} />
         </Route>
       </Switch>
     </Router>

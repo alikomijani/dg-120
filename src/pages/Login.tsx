@@ -53,12 +53,12 @@ function Login() {
               <Label
                 htmlFor="email4"
                 color={errors.email ? "failure" : "default"}
-                value="نام کاربری"
+                value="ایمیل"
               />
             </div>
             <TextInput
               id="email4"
-              placeholder="نام کاربری"
+              placeholder="ایمیل"
               required
               color={errors.email ? "failure" : "gray"}
               className="w-full"
