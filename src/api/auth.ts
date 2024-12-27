@@ -1,7 +1,7 @@
 import Api from "./base";
 
 export interface LoginData {
-  username: string;
+  email: string;
   password: string;
 }
 export interface LoginResponse {
@@ -11,7 +11,6 @@ export interface LoginResponse {
   };
   user: {
     id: string;
-    username: string;
     email: string;
   };
 }

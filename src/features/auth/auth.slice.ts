@@ -9,7 +9,6 @@ const initialValue: LoginResponse & { isLogin: boolean } = {
   user: {
     email: "",
     id: "",
-    username: "",
   },
   isLogin: false,
 };

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../hooks";
 import { login } from "../features/auth/auth.slice";
 const LoginSchema = z.object({
-  username: z.string({
+  email: z.string({
     required_error: "نام کاربری رو بده دیگه",
   }),
 
@@ -16,7 +16,7 @@ const LoginSchema = z.object({
   }),
 });
 interface LoginData {
-  username: string;
+  email: string;
   password: string;
 }
 function Login() {
@@ -51,23 +51,23 @@ function Login() {
           <div>
             <div className="mb-2 block">
               <Label
-                htmlFor="username4"
-                color={errors.username ? "failure" : "default"}
+                htmlFor="email4"
+                color={errors.email ? "failure" : "default"}
                 value="نام کاربری"
               />
             </div>
             <TextInput
-              id="username4"
+              id="email4"
               placeholder="نام کاربری"
               required
-              color={errors.username ? "failure" : "gray"}
+              color={errors.email ? "failure" : "gray"}
               className="w-full"
-              {...register("username")}
+              {...register("email")}
               helperText={
-                errors.username?.message && (
+                errors.email?.message && (
                   <>
                     <span className="font-medium">Oops!</span>
-                    {errors.username?.message}
+                    {errors.email?.message}
                   </>
                 )
               }
