@@ -24,6 +24,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.0.2",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "tailwind-merge": "^2.5.5",
     "zod": "^3.24.1"
   },
